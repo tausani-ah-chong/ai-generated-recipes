@@ -1,10 +1,7 @@
 import Image from 'next/image';
 
 const TopBar = () => (
-  <div className='flex justify-between'>
-    <h1 className='font-bold text-sm font-sans tracking-tight text-white'>
-      AI-Generated Recipes
-    </h1>
+  <div className='flex justify-center'>
     <div className='flex justify-center items-center space-x-2 cursor-pointer' onClick={() => window.open('https://twitter.com/tausani93')}>
       <Image 
         className="rounded-full"

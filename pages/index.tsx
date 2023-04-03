@@ -8,7 +8,6 @@ import Recipes from '@/components/recipes';
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
-  const [showCards, setShowCards] = useState(false);
   const [imageURL, setImageURL] = useState<string[]>([]);
   const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
   const [outputRecipes, setOutputRecipes] = useState<string>('');
@@ -60,7 +59,7 @@ export default function Home() {
 
     setLoading(true);
     setOutputRecipes('');
-    setProgressText('Generating recipes')
+    setProgressText('Generating recipes...')
 
     const controller = new AbortController();
 
@@ -105,7 +104,6 @@ export default function Home() {
 
       setOutputRecipes(code);
     }
-
     
     const image1 = await handleGenerateImage(JSON.parse(code).recipes[0].title, 1)
     const image2 = await handleGenerateImage(JSON.parse(code).recipes[1].title, 2)
@@ -114,7 +112,6 @@ export default function Home() {
     setImageURL([image1, image2, image3])
     setLoading(false);
     setHasTranslated(true);
-    setShowCards(true);
     setProgressText('');
   };
 
@@ -124,7 +121,6 @@ export default function Home() {
 
   const handleClickReset = () => {
     setLoading(false);
-    setShowCards(false);
     setSelectedIngredients([]);
     setOutputRecipes('');
     setHasTranslated(false);
@@ -139,19 +135,20 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='justify-center items-center p-20 flex-col min-h-screen bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-sky-700 via-indigo-950 to-slate-950'>
-        <TopBar />
-        <Header />
+      <main className='justify-center items-center p-4 lg:p-20 flex-col min-h-screen bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-sky-700 via-indigo-950 to-slate-950'>
+        {!loading && !hasTranslated && <TopBar />}
+        {!loading && !hasTranslated && <Header />}
         <GenerateInput 
           onChange={(newValue) => setSelectedIngredients(newValue)}
           onClickGenerate={handleClickGenerate}
           onClickReset={handleClickReset}
           selectedIngredients={selectedIngredients}
+          loading={loading}
         />
         {loading && (
           <LoadingComponent progressText={progressText} />
         )}
-        {showCards && !loading && hasTranslated && (  
+        {!loading && hasTranslated && (  
           <Recipes
             recipes={JSON.parse(outputRecipes).recipes}
             imageURL={imageURL}
