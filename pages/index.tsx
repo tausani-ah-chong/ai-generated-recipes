@@ -17,7 +17,7 @@ export default function Home() {
   const handleGenerateImage = async (recipeTitle: string, itemNumber: number) => {
     setLoading(true);
 
-    setProgressText(`Generating images from DALL-E: ${itemNumber} / 3`)
+    setProgressText(`Generating images from DALL•E: ${itemNumber} / 3`)
 
     const controller = new AbortController();
 
@@ -131,8 +131,16 @@ export default function Home() {
     <>
       <Head>
         <title>AI-Generated Recipes</title>
-        <meta name="description" content="AI what's for tea?" />
+        <meta name="description" content="GPT-3.5-turbo 🤝 DALL•E" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Taste the Future: AI-Generated Recipes" />
+        <meta property="og:description" content="GPT-3.5-turbo 🤝 DALL•E" />
+        <meta property="og:image" content="/home-page-screenshot.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Taste the Future: AI-Generated Recipes" />
+        <meta name="twitter:description" content="GPT-3.5-turbo 🤝 DALL•E" />
+        <meta name="twitter:image" content="/home-page-screenshot.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='justify-center items-center p-4 lg:p-20 flex-col min-h-screen bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-sky-700 via-indigo-950 to-slate-950'>
