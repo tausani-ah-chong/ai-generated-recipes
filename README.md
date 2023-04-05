@@ -1,39 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI-Generated Recipes
 
-## Getting Started
+AI-Generated Recipes is a web application that allows users to generate unique recipes based on the ingredients they provide. The application utilizes GPT-3.5-turbo and DALL-E to create and visualize the recipes.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+- Generate recipes based on user input ingredients
+- Generate images for the recipes using DALL-E
+- Responsive design for both desktop and mobile devices
+
+## Technologies
+
+- Next.js
+- React
+- OpenAI API
+
+## Installation
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository:
+
+```
+git clone https://github.com/your-username/ai-generated-recipes.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Change the directory:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+cd ai-generated-recipes
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Install the dependencies:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Set up environment variables for the OpenAI API:
 
-## Learn More
+Create a `.env.local` file in the root of the project and add the following:
 
-To learn more about Next.js, take a look at the following resources:
+```
+OPENAI_API_KEY=your_openai_api_key
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Replace `your_openai_api_key` with your actual OpenAI API key.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Start the development server:
 
-## Deploy on Vercel
+```
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application should now be running on `http://localhost:3000`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# ai-generated-recipes
+## Usage
+
+1. Enter one or more ingredients in the input field.
+2. Click the "Generate" button to generate recipes based on the provided ingredients.
+3. The application will generate and display the recipes along with their images.
+
+## Contributing
+
+We welcome contributions to the project. Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes and push them to your fork.
+4. Create a pull request with a detailed description of your changes.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+If you have any questions or feedback, please feel free to reach out:
+
+- [GitHub](https://github.com/tausani-ah-chong)
+- [Twitter](https://twitter.com/tausani93)
