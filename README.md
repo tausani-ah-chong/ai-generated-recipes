@@ -1,5 +1,8 @@
 # AI-Generated Recipes
 
+<img width="1195" alt="Screenshot 2023-04-06 at 11 31 59 AM" src="https://user-images.githubusercontent.com/58315812/230238492-7d6993ab-1b7d-40c8-9ad5-f4b2e6096be7.png">
+
+
 AI-Generated Recipes is a web application that allows users to generate unique recipes based on the ingredients they provide. The application utilizes GPT-3.5-turbo and DALL-E to create and visualize the recipes.
 
 ## Features
